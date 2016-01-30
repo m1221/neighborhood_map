@@ -1,0 +1,166 @@
+/* CSS - Default Style
+*  Default Style is for Mobile
+*  Media queries are used to augment/replace styling when page is opened with tablet/desktop browser.
+*  Order by: element -> class -> id; alphabetically
+*/
+
+h1{
+    margin: 0.2vh 0 0.2vh 0.2vw;
+    color: #CBCDDB;
+    cursor: pointer;
+    display: inline;
+}
+
+body{
+    background: transparent linear-gradient(to bottom, #3E3C3D 0%, #2D2C2D 100%);
+}
+
+button{
+    font-size: 1.5em;
+}
+
+.selected{
+    color: #E4D528;
+}
+
+.toDisappear{
+    display: none;
+}
+    
+#container{
+    display: block;
+}
+
+#mapDiv{
+    height: 70vh;
+    margin-left: 1vw;
+}
+
+#search{
+    margin-bottom: 3vh;
+}
+
+#search input{
+    font-size: 1.5em;
+    margin-bottom: 1vh;
+}
+
+#view-list ul{
+    list-style: none;
+    padding-left: 0;
+    color: #CBCDDB;
+}
+
+#view-list ul li{
+    font-size: 1.6em;
+    padding: 0.6vh 0 0.6vh 0;
+    border-bottom: 1px solid #222222;
+    border-top: 1px solid #696060;
+}
+
+.iWMain{ /* Info window Styling */
+    width: 70vw;
+}
+
+.iWdescripH{
+    text-decoration: underline;
+}
+
+h4{ /* Info window Styling */
+    margin: 0;
+}
+
+
+/* Tablet Styling - Portrait */
+@media (min-device-width: 600px) and (max-device-width: 1000px) and (orientation: portrait){
+    #mapDiv{
+        height: 85vh;
+    }
+    
+    .iWMain{ /* Info window Styling */
+        width: 40vw;
+    }
+}
+
+
+
+/* Tablet Styling - Landscape */
+@media (min-device-width: 600px) and (max-device-width: 1000px) and (orientation: landscape){
+    
+    button{
+        display: none;
+    }
+    
+    h1{
+        margin-bottom: 3vh;
+    }
+    
+    .toDisappear{
+        display: initial;
+    }
+    
+    #container{
+        display: flex;
+    }
+    
+    #mapDiv{
+        height: 85vh;
+        width: 62vw;
+        margin-left: 4vw;
+    }
+    
+    #view-list{
+        height: 85vh;
+        width: 30vw;
+    }
+    
+    .iWMain{ /* Info window Styling */
+        width: 35vw;
+    }
+}
+
+
+
+/* Desktop Styling */
+@media (min-device-width: 1001px){
+    
+    button{
+        display: none;
+    }
+    
+    h1{
+        margin-bottom: 3vh;
+    }
+    
+    .toDisappear{
+        display: initial;
+    }
+    
+    #container{
+        display: flex;
+    }
+    
+    #mapDiv{
+        height: 85vh;
+        width: 73vw;
+        margin-left: 2vw;
+    }
+    
+    #search input{
+        width: 18vw;
+    }
+    
+    #view-list{
+        height: 85vh;
+        width: 22vw;
+    }
+    
+    #view-list ul li{
+        cursor: pointer;
+    }
+    
+    .iWMain{ /* Info window Styling */
+        width: 30vw;
+    }
+}
+

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Neighborhood Map</title>
+    <meta charset="UTF-8">
+    <!-- The following meta tag
+        -sets the width of the page across all devices to be the device-width
+        -sets the viewport as unscalable; this is for apps that feature a google map
+         and are being viewed on mobile, as it prevents the mobile's zoom feature from
+         being used/interfering with the map-object's zoom. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- setup inital functions -->
+    <script src="js/setup.js"></script>
+    
+    <!-- 3rd party resources needed to run the app -->
+    <script async src="bower_components/oauth-signature/dist/oauth-signature.js"></script>
+    <script async src="http://maps.googleapis.com/maps/api/js?libraries=places&callback=googleSuccess" onerror="googleError()"></script>
+    <script async src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    
+    <!-- the map and app -->
+    <script async src="js/map.js"></script>
+    <script async src="js/app.js"></script>
+
+</head>
+<body>
+<div data-bind="with: neighborhood">
+<h1 data-bind="text: name, click: toggleSelected"></h1>
+</div>
+
+<div id="container">
+
+<div id="view-list">
+
+    <div id="search">
+        <input data-bind="textInput: currentSearch" placeholder="search">
+        <button type="button" onclick="map.toggleMap()">Toggle Map</button>
+    </div>
+    
+    <ul data-bind="foreach: mainList" class="toDisappear">
+        <li class="" data-bind="visible: visibility, text: name, click: toggleSelected, css: { selected: marker().toggleState() == true }"></li>
+    </ul>
+    
+</div>
+
+
+<div id="mapDiv" ></div>
+
+</div>
+
+</body>
+</html>
